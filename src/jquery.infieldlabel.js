@@ -145,6 +145,13 @@
         return; // Again, nothing to attach
       } 
 
+      //If InFieldLabels object exist, use it
+      var base = $(this).data("InFieldLabels");
+  		if(base){
+				base.checkForEmpty();
+				return;
+			}
+
       // Only create object for input[text], input[password], or textarea
       (new $.InFieldLabels(this, $field[0], options));
     });
